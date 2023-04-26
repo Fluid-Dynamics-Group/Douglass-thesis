@@ -1,0 +1,21 @@
+clear;clc;close all;
+load data_full_sam.mat;
+z_amp_1_temp = z_amp_1;
+z_amp_2_temp = z_amp_2;
+z_dot_amp_1_temp = z_dot_amp_1;
+z_dot_amp_2_temp = z_dot_amp_2;
+z_dot_train_all_temp = z_dot_train_all;
+z_dot_test_temp = z_dot_test;
+z_test_temp =z_test;
+z_train_all_temp = z_train_all;
+load data_full_sam_phase.mat;
+z_amp_1 = [z_amp_1_temp;z_amp_1];
+z_amp_2 = [z_amp_2_temp;z_amp_2];
+z_dot_amp_1 = [z_dot_amp_1_temp;z_dot_amp_1];
+z_dot_amp_2 = [z_dot_amp_2_temp;z_dot_amp_2];
+z_dot_train_all = [z_dot_train_all_temp;z_dot_train_all];
+z_dot_test = [z_dot_test_temp;z_dot_test];
+z_test = [z_test_temp;z_test];
+z_train_all = [z_train_all_temp;z_train_all];
+save('data_full_sam_combined.mat', 'z_dot_amp_1', 'z_dot_amp_2',...
+    'z_amp_1', 'z_amp_2', 'z_dot_test', 'z_test', 'z_train_all', 'z_dot_train_all');
